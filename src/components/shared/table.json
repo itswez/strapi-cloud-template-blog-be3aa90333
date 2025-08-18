@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_tables",
+  "info": {
+    "displayName": "Table",
+    "icon": "table",
+    "description": "Display structured data in table format"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "description": "Optional table title"
+    },
+    "headers": {
+      "type": "json",
+      "description": "Array of column headers"
+    },
+    "rows": {
+      "type": "json",
+      "description": "Array of row data arrays"
+    },
+    "striped": {
+      "type": "boolean",
+      "default": true,
+      "description": "Apply striped styling"
+    },
+    "bordered": {
+      "type": "boolean",
+      "default": false,
+      "description": "Add borders to table"
+    }
+  }
+} 

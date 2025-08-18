@@ -49,6 +49,48 @@
       "slug": "story"
     }
   ],
+  "tags": [
+    {
+      "name": "Shopify",
+      "slug": "shopify",
+      "description": "E-commerce platform and development"
+    },
+    {
+      "name": "Ecommerce",
+      "slug": "ecommerce",
+      "description": "Online business and commerce"
+    },
+    {
+      "name": "Frontend Development",
+      "slug": "frontend-development",
+      "description": "Client-side web development"
+    },
+    {
+      "name": "Performance",
+      "slug": "performance",
+      "description": "Web performance optimization"
+    },
+    {
+      "name": "JavaScript",
+      "slug": "javascript",
+      "description": "Programming language for web development"
+    },
+    {
+      "name": "React",
+      "slug": "react",
+      "description": "JavaScript library for building user interfaces"
+    },
+    {
+      "name": "CSS",
+      "slug": "css",
+      "description": "Styling and layout for web pages"
+    },
+    {
+      "name": "API",
+      "slug": "api",
+      "description": "Application programming interfaces"
+    }
+  ],
   "authors": [
     {
       "name": "David Doe",
