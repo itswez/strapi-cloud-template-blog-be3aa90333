@@ -70,6 +70,21 @@ export interface SharedEmbed extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_links';
+  info: {
+    description: 'A structured link with anchor text and URL';
+    displayName: 'Link';
+    icon: 'link';
+    name: 'Link';
+  };
+  attributes: {
+    anchorText: Schema.Attribute.String & Schema.Attribute.Required;
+    openInNewTab: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -108,14 +123,30 @@ export interface SharedRichText extends Struct.ComponentSchema {
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
-    description: '';
-    displayName: 'Seo';
+    description: 'Comprehensive SEO optimization fields for better search engine visibility';
+    displayName: 'SEO';
     icon: 'allergies';
     name: 'Seo';
   };
   attributes: {
-    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    canonicalUrl: Schema.Attribute.String;
+    externalLinks: Schema.Attribute.Component<'shared.link', true>;
+    h1Title: Schema.Attribute.String;
+    internalLinks: Schema.Attribute.Component<'shared.link', true>;
+    metaDescription: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 155;
+      }>;
+    metaTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    openGraphDescription: Schema.Attribute.Text;
+    openGraphTitle: Schema.Attribute.String;
+    primaryKeywords: Schema.Attribute.Text;
+    secondaryKeywords: Schema.Attribute.Text;
     shareImage: Schema.Attribute.Media<'images'>;
   };
 }
@@ -154,6 +185,7 @@ declare module '@strapi/strapi' {
       'shared.call-to-action': SharedCallToAction;
       'shared.code-block': SharedCodeBlock;
       'shared.embed': SharedEmbed;
+      'shared.link': SharedLink;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

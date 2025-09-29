@@ -3,24 +3,70 @@
   "info": {
     "name": "Seo",
     "icon": "allergies",
-    "displayName": "Seo",
-    "description": ""
+    "displayName": "SEO",
+    "description": "Comprehensive SEO optimization fields for better search engine visibility"
   },
   "options": {},
   "attributes": {
     "metaTitle": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 60
     },
     "metaDescription": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 155
+    },
+    "h1Title": {
+      "type": "string",
+      "required": false,
+      "description": "Main heading for the page (can be different from meta title)"
+    },
+    "primaryKeywords": {
+      "type": "text",
+      "required": false,
+      "description": "Primary keywords for title, intro, headers, meta (comma-separated)"
+    },
+    "secondaryKeywords": {
+      "type": "text",
+      "required": false,
+      "description": "Secondary keywords to sprinkle naturally in body text (comma-separated)"
+    },
+    "canonicalUrl": {
+      "type": "string",
+      "required": false,
+      "description": "Canonical URL for this page"
+    },
+    "internalLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link",
+      "required": false,
+      "description": "Suggested internal links for SEO and user experience"
+    },
+    "externalLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link",
+      "required": false,
+      "description": "Suggested external links for SEO balance"
     },
     "shareImage": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"]
+    },
+    "openGraphTitle": {
+      "type": "string",
+      "required": false,
+      "description": "Custom Open Graph title (if different from meta title)"
+    },
+    "openGraphDescription": {
+      "type": "text",
+      "required": false,
+      "description": "Custom Open Graph description (if different from meta description)"
     }
   }
 }

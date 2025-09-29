@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_links",
+  "info": {
+    "name": "Link",
+    "icon": "link",
+    "displayName": "Link",
+    "description": "A structured link with anchor text and URL"
+  },
+  "options": {},
+  "attributes": {
+    "anchorText": {
+      "type": "string",
+      "required": true,
+      "description": "The text that will be displayed as the link"
+    },
+    "url": {
+      "type": "string",
+      "required": true,
+      "description": "The URL the link points to"
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the link should open in a new tab"
+    }
+  }
+}

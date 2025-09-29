@@ -174,10 +174,19 @@ export interface Article {
       data: Tag[];
     };
     blocks: ContentBlock[];
+    seo?: SEO;
     createdAt: string;
     updatedAt: string;
     publishedAt: string;
   };
+}
+
+// Link Component
+export interface Link {
+  id: number;
+  anchorText: string;
+  url: string;
+  openInNewTab?: boolean;
 }
 
 // SEO Component
@@ -185,12 +194,15 @@ export interface SEO {
   id: number;
   metaTitle: string;
   metaDescription: string;
-  metaImage?: StrapiImage;
-  keywords?: string;
-  metaRobots?: string;
-  structuredData?: any;
-  metaViewport?: string;
-  canonicalURL?: string;
+  h1Title?: string;
+  primaryKeywords?: string;
+  secondaryKeywords?: string;
+  canonicalUrl?: string;
+  internalLinks?: Link[];
+  externalLinks?: Link[];
+  shareImage?: StrapiImage;
+  openGraphTitle?: string;
+  openGraphDescription?: string;
 }
 
 // Global Component
