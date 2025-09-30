@@ -59,6 +59,9 @@
     "useLogo": {
       "type": "boolean"
     },
+    "fullWidthCoverImage": {
+      "type": "boolean"
+    },
     "seo": {
       "type": "component",
       "repeatable": false,

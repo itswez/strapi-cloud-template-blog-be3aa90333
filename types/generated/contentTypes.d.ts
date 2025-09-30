@@ -439,6 +439,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     useLogo: Schema.Attribute.Boolean;
+    fullWidthCoverImage: Schema.Attribute.Boolean;
   };
 }
 

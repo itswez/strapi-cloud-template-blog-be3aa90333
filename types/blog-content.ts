@@ -175,6 +175,7 @@ export interface Article {
     };
     blocks: ContentBlock[];
     seo?: SEO;
+    fullWidthCoverImage?: boolean;
     createdAt: string;
     updatedAt: string;
     publishedAt: string;
