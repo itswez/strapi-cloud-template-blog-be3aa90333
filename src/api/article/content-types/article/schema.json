@@ -62,6 +62,10 @@
     "fullWidthCoverImage": {
       "type": "boolean"
     },
+    "protected": {
+      "type": "boolean",
+      "default": false
+    },
     "seo": {
       "type": "component",
       "repeatable": false,
